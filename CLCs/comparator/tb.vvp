@@ -1,0 +1,58 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_01178168 .scope module, "tb_comparator" "tb_comparator" 2 5;
+ .timescale 0 0;
+v01179698_0 .var "a", 3 0;
+v01174320_0 .var "b", 3 0;
+v01174378_0 .var "clk", 0 0;
+v011743D0_0 .net "eq", 0 0, L_0117EC50; 1 drivers
+v01173298_0 .net "gt", 0 0, L_0117ECE0; 1 drivers
+v011732F0_0 .net "lt", 0 0, L_010511B0; 1 drivers
+v01173348_0 .var "rst_n", 0 0;
+S_01177B08 .scope module, "dut" "comparator" 2 13, 3 3, S_01178168;
+ .timescale 0 0;
+P_0117916C .param/l "n" 3 4, +C4<0100>;
+v010338C8_0 .net "a", 3 0, v01179698_0; 1 drivers
+v01033920_0 .net "b", 3 0, v01174320_0; 1 drivers
+v01033978_0 .alias "eq", 0 0, v011743D0_0;
+v011795E8_0 .alias "gt", 0 0, v01173298_0;
+v01179640_0 .alias "lt", 0 0, v011732F0_0;
+L_0117EC50 .cmp/eq 4, v01179698_0, v01174320_0;
+L_0117ECE0 .cmp/gt 4, v01179698_0, v01174320_0;
+L_010511B0 .cmp/gt 4, v01174320_0, v01179698_0;
+    .scope S_01178168;
+T_0 ;
+    %vpi_call 2 22 "$dumpfile", "tb_comparator.vcd";
+    %vpi_call 2 23 "$dumpvars", 1'sb0, S_01178168;
+    %end;
+    .thread T_0;
+    .scope S_01178168;
+T_1 ;
+    %set/v v01174378_0, 0, 1;
+    %set/v v01173348_0, 1, 1;
+    %delay 10, 0;
+    %movi 8, 16, 6;
+T_1.0 %cmp/s 0, 8, 6;
+    %jmp/0xz T_1.1, 5;
+    %add 8, 1, 6;
+    %vpi_func 2 33 "$urandom_range", 14, 32, 1'sb0, 5'sb01111;
+    %set/v v01179698_0, 14, 4;
+    %vpi_func 2 34 "$urandom_range", 14, 32, 1'sb0, 5'sb01111;
+    %set/v v01174320_0, 14, 4;
+    %delay 20, 0;
+    %vpi_call 2 38 "$display", "a = %b, b = %b, eq = %b, gt = %b, lt = %b", v01179698_0, v01174320_0, v011743D0_0, v01173298_0, v011732F0_0;
+    %jmp T_1.0;
+T_1.1 ;
+    %vpi_call 2 41 "$finish";
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb.v";
+    "./comparator.v";

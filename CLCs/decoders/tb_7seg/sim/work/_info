@@ -1,0 +1,78 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Lorens/Documents/Projects/HDL/Verilog/decoder/tb_7seg/sim
+vbcdto7seg
+Z1 !s110 1714656900
+!i10b 1
+!s100 ]`jNh=_z5b?NIf]iGlWh51
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+If9=n^obX;RDA;Tk<[00TK2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1714655323
+8../bcd-to-7Seg.v
+F../bcd-to-7Seg.v
+!i122 1
+L0 1 21
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1714656900.000000
+!s107 ../Top.v|../bcd-to-7Seg.v|
+Z6 !s90 ../bcd-to-7Seg.v|../Top.v|
+!i113 1
+Z7 tCvgOpt 0
+vtb
+R1
+!i10b 1
+!s100 ?6>LAWiBhHnbeNOmX`dhb2
+R2
+I4WfZ=:I`_XfPe:>Q^65aD3
+R3
+R0
+w1714656246
+8../tb/tb.v
+F../tb/tb.v
+!i122 0
+L0 9 41
+R4
+r1
+!s85 0
+31
+R5
+!s107 ../tb/tb.v|
+!s90 ../tb/tb.v|
+!i113 1
+R7
+vTop
+R1
+!i10b 1
+!s100 :9UJVH>TB6^U]XC@OcJ?b2
+R2
+IR@^gR]SoRBGK@ok>JTz2n0
+R3
+R0
+w1714656279
+8../Top.v
+F../Top.v
+!i122 1
+L0 7 12
+R4
+r1
+!s85 0
+31
+R5
+Z8 !s107 ../Top.v|../bcd-to-7Seg.v|
+R6
+!i113 1
+R7
+n@top

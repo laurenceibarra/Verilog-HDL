@@ -1,0 +1,97 @@
+$date
+	Fri May 03 10:01:29 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_subtractor $end
+$var wire 1 ! borrow $end
+$var wire 4 " result_out [3:0] $end
+$var reg 4 # a_in [3:0] $end
+$var reg 4 $ b_in [3:0] $end
+$scope module sub $end
+$var wire 4 % a [3:0] $end
+$var wire 4 & b [3:0] $end
+$var reg 1 ' borrow $end
+$var reg 4 ( result [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 (
+0'
+b0 &
+b0 %
+b0 $
+b0 #
+b0 "
+0!
+$end
+#10
+1'
+1!
+b1111 (
+b1111 "
+b1 $
+b1 &
+#20
+0'
+0!
+b1 (
+b1 "
+b0 $
+b0 &
+b1 #
+b1 %
+#30
+b0 (
+b0 "
+b1 $
+b1 &
+#40
+1'
+1!
+b1111 (
+b1111 "
+b0 #
+b0 %
+#50
+0'
+0!
+b1 (
+b1 "
+b0 $
+b0 &
+b1 #
+b1 %
+#60
+b0 (
+b0 "
+b1 $
+b1 &
+#70
+1'
+1!
+b1111 (
+b1111 "
+b0 #
+b0 %
+#80
+0'
+0!
+b1 (
+b1 "
+b0 $
+b0 &
+b1 #
+b1 %
+#90
+b0 (
+b0 "
+b1 $
+b1 &
+#100

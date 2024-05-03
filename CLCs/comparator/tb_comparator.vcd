@@ -1,0 +1,138 @@
+$date
+	Thu May 02 12:27:38 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_comparator $end
+$var wire 1 ! eq $end
+$var wire 1 " gt $end
+$var wire 1 # lt $end
+$var reg 4 $ a [3:0] $end
+$var reg 4 % b [3:0] $end
+$var reg 1 & clk $end
+$var reg 1 ' rst_n $end
+$scope module dut $end
+$var wire 4 ( a [3:0] $end
+$var wire 4 ) b [3:0] $end
+$var wire 1 ! eq $end
+$var wire 1 " gt $end
+$var wire 1 # lt $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx )
+bx (
+1'
+0&
+bx %
+bx $
+x#
+x"
+x!
+$end
+#10
+b100 %
+b100 )
+0!
+1"
+0#
+b1001 $
+b1001 (
+#30
+b11 %
+b11 )
+b0 $
+b0 (
+0"
+1#
+#50
+b1100 %
+b1100 )
+b1000 $
+b1000 (
+0"
+1#
+#70
+b0 %
+b0 )
+1"
+0#
+b11 $
+b11 (
+#90
+b1000 %
+b1000 )
+1!
+0"
+b1000 $
+b1000 (
+#110
+b1001 %
+b1001 )
+b1011 $
+b1011 (
+0!
+1"
+#130
+b1100 %
+b1100 )
+b1111 $
+b1111 (
+#150
+b110 %
+b110 )
+#170
+b101 %
+b101 )
+b110 $
+b110 (
+0!
+1"
+#190
+b11 %
+b11 )
+b1111 $
+b1111 (
+#210
+b1100 %
+b1100 )
+b0 $
+b0 (
+0"
+1#
+#230
+b110 %
+b110 )
+b1111 $
+b1111 (
+1"
+0#
+#250
+b111 $
+b111 (
+#270
+b101 %
+b101 )
+b1010 $
+b1010 (
+#290
+b11 %
+b11 )
+b1 $
+b1 (
+0"
+1#
+#310
+b1000 %
+b1000 )
+b11 $
+b11 (
+0!
+1#
+#330
