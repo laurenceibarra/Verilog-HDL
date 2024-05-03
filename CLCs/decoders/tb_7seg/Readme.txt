@@ -1,19 +1,26 @@
-The circuit produces 4 to 1 Multiplexer
-which is displayed on LED[0]
+The bcdto7seg module decodes a 4-bit Binary-Coded Decimal (BCD) input into a 7-segment display format. Each BCD digit (0 to 9) is represented by its corresponding 7-segment LED pattern.
+Digit 0: 7'b1000000
+Digit 1: 7'b1111001
+Digit 2: 7'b0100100
+Digit 3: 7'b0110000
+Digit 4: 7'b0011001
+Digit 5: 7'b0010010
+Digit 6: 7'b0000010
+Digit 7: 7'b1111000
+Digit 8: 7'b0000000
+Digit 9: 7'b0010000
 
-In this demo:
+Usage:
 
--- data_in is the value of SW[5:2]
--- sel is the value of SW[1:0]
+Inputs:
+bcd[3:0]: 4-bit BCD input representing the digit to be displayed.
+Outputs:
+seg[6:0]: 7-bit output representing the segments to be illuminated on the 7-segment display.
 
-The selection signal (sel) determines which input is chosen:
-If sel = 00, then the data_in value from SW[5:2] corresponding to the 0th position is selected.
-If sel = 01, then the data_in value from SW[5:2] corresponding to the 1st position is selected.
-If sel = 10, then the data_in value from SW[5:2] corresponding to the 2nd position is selected.
-If sel = 11, then the data_in value from SW[5:2] corresponding to the 3rd position is selected.
-The output of the selected data_in is then displayed on LED[0].
-
-To use:
-
-Adjust the values of switches SW[5:2] to provide different input data.
-Set switches SW[1:0] to change the selection signal (sel) and observe how it affects the output displayed on LED[0].
+Connect Inputs:
+1. Connect the 4 switches (SW[3:0]) on the DE-series FPGA board to the bcd input of the bcdto7seg module. These switches will represent the BCD input.
+Connect Outputs:
+2. Connect the seg output of the bcdto7seg module to the 7-segment display (HEX0[6:0]) on the DE-series FPGA board.
+Operation:
+3. Toggle the switches (SW[3:0]) to input a BCD digit (0 to 9).
+4. The corresponding 7-segment LED pattern for the entered BCD digit will be displayed on the 7-segment display (HEX0[6:0]).
