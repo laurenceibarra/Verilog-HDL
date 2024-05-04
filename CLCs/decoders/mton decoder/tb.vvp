@@ -1,0 +1,64 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision - 9;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_010F9710 .scope module, "decoder_tb" "decoder_tb" 2 4;
+ .timescale -9 -9;
+v010F4418_0 .var "enable", 0 0;
+v010F3038_0 .var "in", 1 0;
+v010F3090_0 .net "out", 3 0, v010F43C0_0; 1 drivers
+S_010F92D0 .scope module, "d1" "decoder" 2 9, 3 4, S_010F9710;
+ .timescale 0 0;
+P_010F33FC .param/l "m" 3 5, +C4<010>;
+P_010F3410 .param/l "n" 3 6, +C4<0100>;
+v011330C8_0 .net "enable", 0 0, v010F4418_0; 1 drivers
+v010F4368_0 .net "in", 1 0, v010F3038_0; 1 drivers
+v010F43C0_0 .var "out", 3 0;
+E_011318F0 .event edge, v011330C8_0, v010F4368_0;
+    .scope S_010F92D0;
+T_0 ;
+    %wait E_011318F0;
+    %load/v 8, v011330C8_0, 1;
+    %inv 8, 1;
+    %jmp/0xz  T_0.0, 8;
+    %set/v v010F43C0_0, 0, 4;
+    %jmp T_0.1;
+T_0.0 ;
+    %movi 8, 1, 4;
+    %ix/getv 0, v010F4368_0;
+    %shiftl/i0  8, 4;
+    %set/v v010F43C0_0, 8, 4;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_010F9710;
+T_1 ;
+    %vpi_call 2 16 "$dumpfile", "decoder_tb.vcd";
+    %vpi_call 2 17 "$dumpvars", 1'sb0, S_010F9710;
+    %end;
+    .thread T_1;
+    .scope S_010F9710;
+T_2 ;
+    %set/v v010F4418_0, 0, 1;
+    %delay 1, 0;
+    %set/v v010F4418_0, 1, 1;
+    %set/v v010F3038_0, 0, 2;
+    %delay 1, 0;
+    %movi 8, 1, 2;
+    %set/v v010F3038_0, 8, 2;
+    %delay 1, 0;
+    %movi 8, 2, 2;
+    %set/v v010F3038_0, 8, 2;
+    %delay 1, 0;
+    %set/v v010F3038_0, 1, 2;
+    %vpi_call 2 31 "$finish";
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb.v";
+    "./decoder.v";
