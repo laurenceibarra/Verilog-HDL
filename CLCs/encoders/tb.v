@@ -3,12 +3,12 @@
 `default_nettype none
 
 module tb_prioencoder;
-    reg [3:0] in;
-    wire [1:0] out;
+    reg [7:0] in;
+    wire [2:0] out;
 
     priority_encoder #(
-        .m(4),
-        .n(2)
+        .m(8),
+        .n(3)
         ) prioencoder(
             .in(in),
             .out(out)
@@ -22,13 +22,7 @@ end
 
 initial begin
     $monitor("in=%b, out=%d", in, out);
-    in = 4'b0001;
-    #1;
-    in = 4'b0010;
-    #1;
-    in = 4'b0100;
-    #1;
-    in = 4'b1000;
+    in = 8'b0000_0001;
     #1;
 
 end
