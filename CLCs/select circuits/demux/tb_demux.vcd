@@ -1,0 +1,52 @@
+$date
+	Sun May 05 20:16:51 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_demux $end
+$var wire 4 ! out [3:0] $end
+$var reg 1 " in $end
+$var integer 32 # n [31:0] $end
+$var reg 2 $ sel [1:0] $end
+$scope module DUT $end
+$var wire 1 % in $end
+$var wire 2 & sel [1:0] $end
+$var integer 32 ' i [31:0] $end
+$var reg 4 ( out [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 (
+b100 '
+b0 &
+1%
+b0 $
+b10 #
+1"
+b1 !
+$end
+#10
+b10 (
+b10 !
+b100 '
+b1 $
+b1 &
+#20
+b100 !
+b100 (
+b100 '
+b10 $
+b10 &
+#30
+b1000 !
+b1000 (
+b100 '
+b11 $
+b11 &
+#40
