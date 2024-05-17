@@ -19,11 +19,19 @@ initial begin
     $dumpvars(0, tb_prioencoder);
 end
 
+integer i;
 
 initial begin
-    $monitor("in=%b, out=%d", in, out);
-    in = 8'b0000_0001;
-    #1;
+    $monitor("in=%b, out=%b", in, out);
+    for(i = 0; i < 8; i = i + 1) begin
+        in = 1'b1 << i;
+        #10;
+    end
+
+    #10;
+    in = 8'b00001101;
+    $finish;
+
 
 end
 
